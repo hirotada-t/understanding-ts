@@ -1,25 +1,26 @@
-function add2(n1: number, n2: number) {
-  const result = n1 + n2;
-  return result;
+let userInput: unknown;
+let userName: string;
+
+userInput = 4;
+userInput = "sss";
+
+if (typeof userInput === "string") userName = userInput;
+
+function generateError(message: string, code: number):never { 
+  throw { message: message, errorCode: code };
 }
 
-function printResult2(num: number) {
-  console.log("Result: " + num);
+try {
+  // エラーの条件によりエラー関数を起動
+  // if (...) {
+    generateError("エラーが発生しました", 500);
+  // }
+
+  // エラーが起きなかった場合の処理
+  // ...
+  // ...
+
+  // エラー発生時の処理(エラーオブジェクトeを受け取り)
+} catch(e) {
+  console.log(e);
 }
-
-let combineValues: (a: number, b: number) => number;
-combineValues = add2;
-// combineValues = 1;
-// combineValues = printResult2
-console.log(combineValues(5, 1));
-
-printResult2(add2(4, 12));
-
-function addAndHandle(n1:number, n2:number,cb:(num:number) => void) {
-  const result = n1 + n2;
-  cb(result);
-}
-
-addAndHandle(10, 20, (result) => {
-  console.log(result);
-});

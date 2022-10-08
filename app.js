@@ -1,20 +1,15 @@
-function add2(n1, n2) {
-    var result = n1 + n2;
-    return result;
+var userInput;
+var userName;
+userInput = 4;
+userInput = "sss";
+if (typeof userInput === "string")
+    userName = userInput;
+function generateError(message, code) {
+    throw { message: message, errorCode: code };
 }
-function printResult2(num) {
-    console.log("Result: " + num);
+try {
+    generateError("エラーが発生しました", 500);
 }
-var combineValues;
-combineValues = add2;
-// combineValues = 1;
-// combineValues = printResult2
-console.log(combineValues(5, 1));
-printResult2(add2(4, 12));
-function addAndHandle(n1, n2, cb) {
-    var result = n1 + n2;
-    cb(result);
+catch (e) {
+    console.log(e);
 }
-addAndHandle(10, 20, function (result) {
-    console.log(result);
-});
