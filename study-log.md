@@ -88,3 +88,21 @@
 
 ## 39.
 - sourceMap→ブラウザのソースマップでTSを利用可能（break pointを設定可能）
+
+# 1009
+## 40.
+- outDir→出力先のディレクトリ
+- rootDir→ルートの外にtsがあるとエラーになる
+- removeComment→コメントを削除してコンパイル
+
+## 41.
+- noEmitOnError→エラーがある状態でのコンパイルを停止する
+
+## 42.
+- noImplicitAny→引数がanyの場合に指摘
+- strictNullChecks→Nullかもしれないオブジェクトを指摘
+- strictFunctionTypes→クラスや継承で発生しうるバグを指摘
+- strictBindCallApply→call-bind-applyで型を確認する
+
+## 43.
+- 
